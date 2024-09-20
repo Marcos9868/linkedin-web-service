@@ -1,0 +1,20 @@
+services:
+  api:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/linkedin_db
+
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+      args: 
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    env_file:
+     - .env
