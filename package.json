@@ -10,7 +10,7 @@
     "start": "node ./build/index.js",
     "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/index.ts",
     "build": "rm -rf build && tsc",
-    "deploy": "yarn build && yarn version && yarn docker:build",
+    "deploy": "npm run build && npm version patch && npm run docker:build",
     "----------------TESTS------------------": "--------------------------------------------",
     "test": "jest"
   },

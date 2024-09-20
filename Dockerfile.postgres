@@ -1,0 +1,12 @@
+FROM postgres:15
+
+ARG POSTGRES_PASSWORD
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+ENV POSTGRES_DB=linkedin_db
+
+# (Opcional) Copia scripts de inicialização para o container
+# COPY ./scripts/init.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 5432

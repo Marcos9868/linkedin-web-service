@@ -3,3 +3,4 @@ Models.md
 yarn.lock
 package-lock.json
 build
+.env
